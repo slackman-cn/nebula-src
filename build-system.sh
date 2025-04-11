@@ -35,8 +35,3 @@ git clone https://github.com/rbenv/ruby-build.git /build/ruby-build  --depth 1 -
 PREFIX=/usr/local/ruby-build ./ruby-build/install.sh
 ruby-build --list  
 ruby-build ${RUBY_TAG} /usr/local/ruby
-
-
-# Install RubyGems
-cd deps
-bundle install

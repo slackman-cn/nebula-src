@@ -21,8 +21,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends tzdata \
 
 # Install build base
 WORKDIR /build
-COPY build-system.sh .
-COPY clone-source.sh .
+COPY . ./
 
 RUN bash build-system.sh && bash clone-source.sh \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
