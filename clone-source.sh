@@ -41,12 +41,3 @@ git clone https://github.com/stefanberger/swtpm /build/swtpm --depth 1 -b "${SWT
 
 mkdir /build/nasm/
 curl -sL "https://www.nasm.us/pub/nasm/releasebuilds/$(echo ${NASM_TAG} | cut -d- -f2)/${NASM_TAG}.tar.gz" | tar -C /build/nasm/ -zx --strip-components=1
-
-
-# OpenNebula Deps
-cd /build/deps
-bash download-context.sh
-bundle install
-gem install sass ronn
-npm install -g bower
-npm install -g grunt

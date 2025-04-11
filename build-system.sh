@@ -35,3 +35,15 @@ git clone https://github.com/rbenv/ruby-build.git /build/ruby-build  --depth 1 -
 PREFIX=/usr/local/ruby-build ./ruby-build/install.sh
 ruby-build --list  
 ruby-build ${RUBY_TAG} /usr/local/ruby
+
+
+
+
+# OpenNebula Deps
+apt-get install --yes jq
+cd /build/deps
+bash download-context.sh
+bundle install
+gem install sass ronn
+npm install -g bower
+npm install -g grunt
