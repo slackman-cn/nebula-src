@@ -9,6 +9,11 @@ NODE_TAG="linux-x64"
 RUBY_BUILD="v20250409"
 RUBY_TAG="3.3.8"
 
+case $(uname -m) in
+  x86_64)  GOLANG_TAG="linux-amd64" NODE_TAG="linux-x64";;
+  aarch64) GOLANG_TAG="linux-arm64" NODE_TAG="linux-arm64";;
+esac
+
 # Install Base dependencies (curl include ca-certificates)
 apt-get install --no-install-recommends --yes language-pack-en 
 apt-get install --yes build-essential vim less git wget curl 
@@ -26,7 +31,7 @@ go version
 
 # Install Node
 mkdir /usr/local/node/
-curl -sL "https://nodejs.org/dist/v22.11.0/node-v22.11.0-${NODE_TAG}.tar.xz" | tar -C /usr/local/node/ -Jx --strip-components=1
+curl -sL "https://nodejs.org/dist/v18.20.8/node-v18.20.8-${NODE_TAG}.tar.xz" | tar -C /usr/local/node/ -Jx --strip-components=1
 
 # Install Ruby
 apt-get install --yes \

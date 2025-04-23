@@ -40,4 +40,5 @@ git clone https://github.com/stefanberger/libtpms /build/libtpms --depth 1 -b "$
 git clone https://github.com/stefanberger/swtpm /build/swtpm --depth 1 -b "${SWTPM_TAG}"
 
 mkdir /build/nasm/
-curl -sL "https://www.nasm.us/pub/nasm/releasebuilds/$(echo ${NASM_TAG} | cut -d- -f2)/${NASM_TAG}.tar.gz" | tar -C /build/nasm/ -zx --strip-components=1
+# www.nasm.us is down @202504
+#curl -sL "https://www.nasm.us/pub/nasm/releasebuilds/$(echo ${NASM_TAG} | cut -d- -f2)/${NASM_TAG}.tar.gz" | tar -C /build/nasm/ -zx --strip-components=1
